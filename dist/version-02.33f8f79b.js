@@ -601,7 +601,7 @@ new (0, _p5Default.default)((sk)=>{
         sk.rectMode(sk.CENTER);
         sk.strokeCap(sk.SQUARE);
         sk.background("white");
-        sk.frameRate(2);
+        sk.frameRate(1);
     };
     sk.draw = ()=>{
         sk.push();
