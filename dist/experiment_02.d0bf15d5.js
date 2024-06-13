@@ -593,10 +593,10 @@ new (0, _p5Default.default)((sk)=>{
         "red",
         "black"
     ];
+    let color1 = "red", color2 = "red", color3 = "red", color4 = "red";
     function randomColor() {
         return colors[Math.floor(Math.random() * colors.length)];
     }
-    let color1 = color2 = color3 = color4 = colors[0];
     sk.setup = ()=>{
         sk.createCanvas(sk.windowWidth, sk.windowHeight);
         sk.rectMode(sk.CENTER);
