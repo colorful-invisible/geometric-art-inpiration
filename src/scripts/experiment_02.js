@@ -3,8 +3,8 @@ import p5 from "p5";
 new p5((sk) => {
   const colors = ["white", "red", "black"];
   let color1 = "red",
-    color2 = "red",
-    color3 = "red",
+    color2 = "black",
+    color3 = "black",
     color4 = "red";
 
   function randomColor() {

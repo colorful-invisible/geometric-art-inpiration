@@ -593,7 +593,7 @@ new (0, _p5Default.default)((sk)=>{
         "red",
         "black"
     ];
-    let color1 = "red", color2 = "red", color3 = "red", color4 = "red";
+    let color1 = "red", color2 = "black", color3 = "black", color4 = "red";
     function randomColor() {
         return colors[Math.floor(Math.random() * colors.length)];
     }
