@@ -1,3 +1,9 @@
+// ---- RANDOM COLOR
+// -----------------
+function randomColor(colors) {
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
 // ---- SINOIDAL PULSE
 // -------------------
 function pulse(sk, min, max, time) {
@@ -160,4 +166,4 @@ function createAndSetupTextures(options) {
   });
 }
 
-export { averageLandmarkPosition, createAndSetupTextures, drawTexturedQuad };
+export { randomColor };

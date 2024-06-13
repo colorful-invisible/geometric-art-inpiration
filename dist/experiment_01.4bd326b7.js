@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"a8f5b":[function(require,module,exports) {
+})({"5KsX3":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "7c64bf0fa380fc8e";
+module.bundle.HMR_BUNDLE_ID = "919af0fd4bd326b7";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -583,50 +583,33 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"3fvTS":[function(require,module,exports) {
+},{}],"5Piym":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _p5 = require("p5");
 var _p5Default = parcelHelpers.interopDefault(_p5);
 new (0, _p5Default.default)((sk)=>{
     const colors = [
-        "#E8DC47",
-        "#E5D8D3",
-        "#39373A",
-        "#5FC6EF"
+        "white",
+        "red",
+        "black"
     ];
-    let chosenColors = [];
-    let startColor, endColor;
-    let lerpFactor = 0;
-    const lerpSpeed = 0.01;
-    function randomColor() {
-        return colors[Math.floor(Math.random() * colors.length)];
-    }
-    function assignRandomColors() {
-        chosenColors = [
-            randomColor(),
-            randomColor(),
-            randomColor()
-        ];
-    }
     sk.setup = ()=>{
         sk.createCanvas(sk.windowWidth, sk.windowHeight);
         sk.rectMode(sk.CENTER);
         sk.strokeCap(sk.SQUARE);
         sk.background("white");
-        assignRandomColors();
-        startColor = sk.color(randomColor());
-        endColor = sk.color(randomColor());
+        sk.frameRate(2);
     };
     sk.draw = ()=>{
         sk.push();
         sk.translate(sk.width / 2, sk.height / 2);
-        sk.fill(chosenColors[0]);
+        sk.fill("red");
         sk.noStroke();
         sk.rect(0, 0, 800, 600);
         sk.pop();
         sk.translate(sk.width / 2 - 400, sk.height / 2 - 300);
         sk.push();
-        sk.stroke(chosenColors[1]);
+        sk.stroke("black");
         sk.strokeWeight(32);
         // HORIZONTAL LINES
         sk.line(32, 48, 432, 48);
@@ -647,26 +630,19 @@ new (0, _p5Default.default)((sk)=>{
         sk.pop();
         sk.push();
         sk.noStroke();
-        sk.fill(chosenColors[2]);
+        sk.fill("black");
         sk.quad(96, 62, 162, 200, 96, 324, 32, 200);
         sk.quad(580, 568, 448, 500, 580, 440, 712, 500);
         sk.pop();
         sk.push();
-        let interpolatedColor = sk.lerpColor(startColor, endColor, lerpFactor);
-        sk.stroke(interpolatedColor);
+        sk.stroke("red");
         sk.strokeWeight(32);
         sk.line(96, 136, 96, 248);
         sk.line(524, 500, 636, 500);
         sk.pop();
-        if (lerpFactor < 1) lerpFactor += lerpSpeed;
-        if (lerpFactor >= 1) {
-            startColor = endColor;
-            endColor = sk.color(randomColor());
-            lerpFactor = 0;
-        }
     };
 });
 
-},{"p5":"7Uk5U","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["a8f5b","3fvTS"], "3fvTS", "parcelRequire94c2")
+},{"p5":"7Uk5U","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["5KsX3"], null, "parcelRequire94c2")
 
-//# sourceMappingURL=version-03.a380fc8e.js.map
+//# sourceMappingURL=experiment_01.4bd326b7.js.map

@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"h9Rts":[function(require,module,exports) {
+})({"jpUV3":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "6e8a5cd20fbc91cd";
+module.bundle.HMR_BUNDLE_ID = "3016e50471174c6b";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -583,165 +583,90 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"fFaKF":[function(require,module,exports) {
-document.addEventListener("DOMContentLoaded", ()=>{
-    const loadScript = async (page)=>{
-        try {
-            switch(page){
-                case "index":
-                    await require("4efe370df087350");
-                    break;
-                case "experiment-02":
-                    await require("420e84970146f5f4");
-                    break;
-                case "experiment-03":
-                    await require("92130ea26ea42a53");
-                    break;
-                default:
-                    console.log(`No specific script found for the page: ${page}`);
-            }
-        } catch (error) {
-            console.error(`Error loading script for ${page}:`, error);
+},{}],"hqTWI":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _p5 = require("p5");
+var _p5Default = parcelHelpers.interopDefault(_p5);
+new (0, _p5Default.default)((sk)=>{
+    const colors = [
+        "#E8DC47",
+        "#E5D8D3",
+        "#39373A",
+        "#5FC6EF"
+    ];
+    let chosenColors = [];
+    let startColor, endColor;
+    let lerpFactor = 0;
+    const lerpSpeed = 0.01;
+    function randomColor() {
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
+    function assignRandomColors() {
+        chosenColors = [
+            randomColor(),
+            randomColor(),
+            randomColor()
+        ];
+    }
+    sk.setup = ()=>{
+        sk.createCanvas(sk.windowWidth, sk.windowHeight);
+        sk.rectMode(sk.CENTER);
+        sk.strokeCap(sk.SQUARE);
+        sk.background("white");
+        assignRandomColors();
+        startColor = sk.color(randomColor());
+        endColor = sk.color(randomColor());
+    };
+    sk.draw = ()=>{
+        sk.push();
+        sk.translate(sk.width / 2, sk.height / 2);
+        sk.fill(chosenColors[0]);
+        sk.noStroke();
+        sk.rect(0, 0, 800, 600);
+        sk.pop();
+        sk.translate(sk.width / 2 - 400, sk.height / 2 - 300);
+        sk.push();
+        sk.stroke(chosenColors[1]);
+        sk.strokeWeight(32);
+        // HORIZONTAL LINES
+        sk.line(32, 48, 432, 48);
+        sk.line(96, 552, 200, 552);
+        sk.line(600, 48, 768, 48);
+        sk.line(600, 132, 768, 132);
+        sk.line(600, 216, 768, 216);
+        sk.line(600, 300, 768, 300);
+        sk.line(424, 408, 600, 408);
+        sk.line(572, 500, 768, 500);
+        // VERTICAL LINES
+        sk.line(96, 280, 96, 568);
+        sk.line(200, 48, 200, 568);
+        sk.line(320, 32, 320, 568);
+        sk.line(432, 32, 432, 568);
+        sk.line(600, 32, 600, 424);
+        sk.line(752, 48, 752, 500);
+        sk.pop();
+        sk.push();
+        sk.noStroke();
+        sk.fill(chosenColors[2]);
+        sk.quad(96, 62, 162, 200, 96, 324, 32, 200);
+        sk.quad(580, 568, 448, 500, 580, 440, 712, 500);
+        sk.pop();
+        sk.push();
+        let interpolatedColor = sk.lerpColor(startColor, endColor, lerpFactor);
+        sk.stroke(interpolatedColor);
+        sk.strokeWeight(32);
+        sk.line(96, 136, 96, 248);
+        sk.line(524, 500, 636, 500);
+        sk.pop();
+        if (lerpFactor < 1) lerpFactor += lerpSpeed;
+        if (lerpFactor >= 1) {
+            startColor = endColor;
+            endColor = sk.color(randomColor());
+            lerpFactor = 0;
         }
     };
-    let currentPage = window.location.pathname.split("/").pop().replace(".html", "");
-    if (!currentPage) currentPage = "index";
-    loadScript(currentPage);
 });
 
-},{"4efe370df087350":"jgg9m","420e84970146f5f4":"7aRSu","92130ea26ea42a53":"itOwj"}],"jgg9m":[function(require,module,exports) {
-module.exports = Promise.all([
-    require("69edf1c5ccd0358d")(require("1abd5c64a950bee8").getBundleURL("9up4p") + "experiment_01.dd645c69.js" + "?" + Date.now()).catch((err)=>{
-        delete module.bundle.cache[module.id];
-        throw err;
-    }),
-    require("69edf1c5ccd0358d")(require("1abd5c64a950bee8").getBundleURL("9up4p") + "experiment_01.4bd326b7.js" + "?" + Date.now()).catch((err)=>{
-        delete module.bundle.cache[module.id];
-        throw err;
-    })
-]).then(()=>module.bundle.root("5Piym"));
+},{"p5":"7Uk5U","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["jpUV3"], null, "parcelRequire94c2")
 
-},{"69edf1c5ccd0358d":"61B45","1abd5c64a950bee8":"lgJ39"}],"61B45":[function(require,module,exports) {
-"use strict";
-var cacheLoader = require("ca2a84f7fa4a3bb0");
-module.exports = cacheLoader(function(bundle) {
-    return new Promise(function(resolve, reject) {
-        // Don't insert the same script twice (e.g. if it was already in the HTML)
-        var existingScripts = document.getElementsByTagName("script");
-        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
-            return script.src === bundle;
-        })) {
-            resolve();
-            return;
-        }
-        var preloadLink = document.createElement("link");
-        preloadLink.href = bundle;
-        preloadLink.rel = "preload";
-        preloadLink.as = "script";
-        document.head.appendChild(preloadLink);
-        var script = document.createElement("script");
-        script.async = true;
-        script.type = "text/javascript";
-        script.src = bundle;
-        script.onerror = function(e) {
-            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
-            script.onerror = script.onload = null;
-            script.remove();
-            reject(error);
-        };
-        script.onload = function() {
-            script.onerror = script.onload = null;
-            resolve();
-        };
-        document.getElementsByTagName("head")[0].appendChild(script);
-    });
-});
-
-},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
-"use strict";
-var cachedBundles = {};
-var cachedPreloads = {};
-var cachedPrefetches = {};
-function getCache(type) {
-    switch(type){
-        case "preload":
-            return cachedPreloads;
-        case "prefetch":
-            return cachedPrefetches;
-        default:
-            return cachedBundles;
-    }
-}
-module.exports = function(loader, type) {
-    return function(bundle) {
-        var cache = getCache(type);
-        if (cache[bundle]) return cache[bundle];
-        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
-            delete cache[bundle];
-            throw e;
-        });
-    };
-};
-
-},{}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"7aRSu":[function(require,module,exports) {
-module.exports = Promise.all([
-    require("e2dbcede19110728")(require("65d97f50534e083c").getBundleURL("9up4p") + "experiment_01.dd645c69.js" + "?" + Date.now()).catch((err)=>{
-        delete module.bundle.cache[module.id];
-        throw err;
-    }),
-    require("e2dbcede19110728")(require("65d97f50534e083c").getBundleURL("9up4p") + "experiment_02.d0bf15d5.js" + "?" + Date.now()).catch((err)=>{
-        delete module.bundle.cache[module.id];
-        throw err;
-    })
-]).then(()=>module.bundle.root("4loMn"));
-
-},{"e2dbcede19110728":"61B45","65d97f50534e083c":"lgJ39"}],"itOwj":[function(require,module,exports) {
-module.exports = Promise.all([
-    require("d99beb4c9711d530")(require("61c53dd954db33da").getBundleURL("9up4p") + "experiment_01.dd645c69.js" + "?" + Date.now()).catch((err)=>{
-        delete module.bundle.cache[module.id];
-        throw err;
-    }),
-    require("d99beb4c9711d530")(require("61c53dd954db33da").getBundleURL("9up4p") + "experiment_03.71174c6b.js" + "?" + Date.now()).catch((err)=>{
-        delete module.bundle.cache[module.id];
-        throw err;
-    })
-]).then(()=>module.bundle.root("hqTWI"));
-
-},{"d99beb4c9711d530":"61B45","61c53dd954db33da":"lgJ39"}]},["h9Rts","fFaKF"], "fFaKF", "parcelRequire94c2")
-
-//# sourceMappingURL=index.0fbc91cd.js.map
+//# sourceMappingURL=experiment_03.71174c6b.js.map

@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"g7kbi":[function(require,module,exports) {
+})({"feUiV":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "548556ec33f8f79b";
+module.bundle.HMR_BUNDLE_ID = "aaa7a3cfd0bf15d5";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -583,7 +583,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"gXSje":[function(require,module,exports) {
+},{}],"4loMn":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _p5 = require("p5");
 var _p5Default = parcelHelpers.interopDefault(_p5);
@@ -596,30 +596,29 @@ new (0, _p5Default.default)((sk)=>{
     function randomColor() {
         return colors[Math.floor(Math.random() * colors.length)];
     }
+    let color1 = color2 = color3 = color4 = colors[0];
     sk.setup = ()=>{
         sk.createCanvas(sk.windowWidth, sk.windowHeight);
         sk.rectMode(sk.CENTER);
         sk.strokeCap(sk.SQUARE);
         sk.background("white");
-        sk.frameRate(1);
     };
     sk.draw = ()=>{
+        if (sk.frameCount % 30 === 0) {
+            color1 = randomColor();
+            color2 = randomColor();
+            color3 = randomColor();
+            color4 = randomColor();
+        }
         sk.push();
         sk.translate(sk.width / 2, sk.height / 2);
-        sk.fill(randomColor());
+        sk.fill(color1);
         sk.noStroke();
         sk.rect(0, 0, 800, 600);
         sk.pop();
         sk.translate(sk.width / 2 - 400, sk.height / 2 - 300);
-        // sk.push();
-        // sk.stroke("blue");
-        // sk.strokeWeight(4);
-        // sk.line(400, 0, 400, 600);
-        // sk.line(200, 0, 200, 600);
-        // sk.line(600, 0, 600, 600);
-        // sk.pop();
         sk.push();
-        sk.stroke(randomColor());
+        sk.stroke(color2);
         sk.strokeWeight(32);
         // HORIZONTAL LINES
         sk.line(32, 48, 432, 48);
@@ -640,12 +639,12 @@ new (0, _p5Default.default)((sk)=>{
         sk.pop();
         sk.push();
         sk.noStroke();
-        sk.fill(randomColor());
+        sk.fill(color3);
         sk.quad(96, 62, 162, 200, 96, 324, 32, 200);
         sk.quad(580, 568, 448, 500, 580, 440, 712, 500);
         sk.pop();
         sk.push();
-        sk.stroke(randomColor());
+        sk.stroke(color4);
         sk.strokeWeight(32);
         sk.line(96, 136, 96, 248);
         sk.line(524, 500, 636, 500);
@@ -653,6 +652,6 @@ new (0, _p5Default.default)((sk)=>{
     };
 });
 
-},{"p5":"7Uk5U","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["g7kbi","gXSje"], "gXSje", "parcelRequire94c2")
+},{"p5":"7Uk5U","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["feUiV"], null, "parcelRequire94c2")
 
-//# sourceMappingURL=version-02.33f8f79b.js.map
+//# sourceMappingURL=experiment_02.d0bf15d5.js.map
